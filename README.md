@@ -1,7 +1,7 @@
 # Script tool to write a JSON file
 
 ## General info
-Easy tool to make GET Requests to an API and write a JSON file passing search parameters through the console.
+Easy tool to make GET Requests to an API and write JSON and CSV files passing search parameters through the console.
 
 ## Setup
 To run this project, install it locally using npm:
