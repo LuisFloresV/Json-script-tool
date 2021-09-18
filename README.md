@@ -1,4 +1,4 @@
-# Script tool to write a JSON file
+# Script tool to write JSON and CSV files
 
 ## General info
 Easy tool to make GET Requests to an API and write JSON and CSV files passing search parameters through the console.
