@@ -1,7 +1,8 @@
 const axios = require('axios').default;
+
 const API_URL = 'https://swapi.dev/api/planets';
-const fs = require('fs')
-const { promisify } = require('util')
+const fs = require('fs');
+const { promisify } = require('util');
 const converter = require('json-2-csv');
 
 const appendFileAsync = promisify(fs.appendFile);
@@ -27,16 +28,14 @@ const createFolder = async () => {
   if (!await existsAsync(folderName)) {
     await mkdirAsync(folderName);
   }
-  return;
-}
+};
 
-const generateJsonFile = async (fileDate, apiResponseData) => await appendFileAsync(`${folderName}/${fileDate}-api-data.json`, apiResponseData);
-
+const generateJsonFile = async (fileDate, apiResponseData) => appendFileAsync(`${folderName}/${fileDate}-api-data.json`, apiResponseData);
 
 const generateCsvFile = async (fileDate, apiResponseData) => {
-  const csvFileData = await converter.json2csvAsync(JSON.parse(apiResponseData))
-  await appendFileAsync(`${folderName}/${fileDate}-api-data.csv`, csvFileData)
-}
+  const csvFileData = await converter.json2csvAsync(JSON.parse(apiResponseData));
+  await appendFileAsync(`${folderName}/${fileDate}-api-data.csv`, csvFileData);
+};
 
 const generateFiles = async () => {
   const searchParams = getParamsForSearch();
@@ -47,7 +46,6 @@ const generateFiles = async () => {
 
   await generateJsonFile(fileDate, apiResponseData);
   await generateCsvFile(fileDate, apiResponseData);
-}
+};
 
 generateFiles();
-

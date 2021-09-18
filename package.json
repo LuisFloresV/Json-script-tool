@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "generate-files": "node ./src/index",
+    "lint": "eslint ./src --fix"
   },
   "keywords": [],
   "author": "Luis Flores <naokodeveloper@gmail.com>",
@@ -13,5 +14,10 @@
   "dependencies": {
     "axios": "^0.21.4",
     "json-2-csv": "^3.14.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2"
   }
 }
